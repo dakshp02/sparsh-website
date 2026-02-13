@@ -1,178 +1,254 @@
+/* ===== ROOT COLORS ===== */
+:root{
+--bg-main:#020a1a;
+--bg-dark:#000814;
+
+--neon-main:#00d4ff;
+--neon-soft:#7df9ff;
+
+--text-main:#e6f7ff;
+}
+
 /* ===== GLOBAL ===== */
 body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#020a1a;
-    color:#e6f7ff;
+margin:0;
+font-family:Segoe UI, Arial, sans-serif;
+background:var(--bg-main);
+color:var(--text-main);
+overflow-x:hidden;
 }
 
-a{
-    text-decoration:none;
+/* ===== NEON PARTICLE BACKGROUND ===== */
+body::before{
+content:"";
+position:fixed;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+
+background:
+radial-gradient(circle, rgba(0,212,255,0.05) 2%, transparent 3%);
+
+background-size:80px 80px;
+animation:rotateLights 40s linear infinite;
+pointer-events:none;
 }
 
-/* ===== HERO SECTION ===== */
+@keyframes rotateLights{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+}
+
+/* ===== HEADER ===== */
+.top-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 50px;
+
+background:rgba(0,0,20,0.7);
+backdrop-filter:blur(12px);
+
+border-bottom:1px solid rgba(0,212,255,0.2);
+}
+
+/* LOGO */
+.clg-logo{
+height:60px;
+animation:slideDown 1s ease;
+}
+
+/* SPARSH TEXT */
+.sparsh-title{
+font-size:30px;
+font-weight:700;
+color:var(--neon-main);
+
+text-shadow:
+0 0 10px var(--neon-main),
+0 0 25px var(--neon-main);
+
+animation:slideDown 1.2s ease;
+}
+
+/* SLIDE DOWN */
+@keyframes slideDown{
+from{
+transform:translateY(-60px);
+opacity:0;
+}
+to{
+transform:translateY(0);
+opacity:1;
+}
+}
+
+/* ===== HERO ===== */
 .hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+min-height:85vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:80px 20px;
 
-    background:
-    linear-gradient(rgba(0,0,30,0.7), rgba(0,0,30,0.9)),
-    url("../images/hero.jpg");
+background:
+linear-gradient(rgba(0,0,30,0.7), rgba(0,0,40,0.9)),
+url("../images/hero.jpg");
 
-    background-size:cover;
-    background-position:center;
+background-size:cover;
+background-position:center;
 }
 
-/* Smaller hero for event pages */
-.small-hero{
-    min-height:50vh;
+/* HERO TITLE */
+.hero h1{
+font-size:64px;
+margin:0;
+
+color:var(--neon-soft);
+
+text-shadow:
+0 0 15px var(--neon-main),
+0 0 40px var(--neon-main);
 }
 
-/* ===== NEON TEXT ===== */
-.glow{
-    font-size:70px;
-    color:#7df9ff;
-    text-shadow:
-    0 0 10px #00d4ff,
-    0 0 25px #00d4ff,
-    0 0 50px #00d4ff;
+/* HERO TEXT */
+.hero p{
+max-width:650px;
+opacity:0.9;
+line-height:1.6;
 }
 
-.tagline{
-    font-size:24px;
-    letter-spacing:3px;
-    margin-top:10px;
+/* ===== DATE BADGE ===== */
+.event-date{
+position:absolute;
+right:40px;
+top:120px;
+
+background:linear-gradient(45deg,#001f3f,#003566);
+
+border:1px solid var(--neon-main);
+
+padding:16px 20px;
+border-radius:14px;
+
+box-shadow:0 0 20px rgba(0,212,255,0.4);
+}
+
+/* ===== BUTTON ===== */
+.main-btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 40px;
+
+background:transparent;
+border:2px solid var(--neon-main);
+
+color:var(--neon-main);
+text-decoration:none;
+font-weight:bold;
+border-radius:40px;
+
+transition:0.3s;
+}
+
+.main-btn:hover{
+background:var(--neon-main);
+color:#001020;
+box-shadow:0 0 25px var(--neon-main);
 }
 
 /* ===== EVENTS GRID ===== */
-.events{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    padding:80px 20px;
-    flex-wrap:wrap;
+.events-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
+padding:80px 40px;
 }
 
-/* ===== EVENT CARD ===== */
+/* EVENT CARD */
 .event-card{
-    width:260px;
-    text-align:center;
-    text-decoration:none;
-    color:#e6f7ff;
+padding:50px 30px;
 
-    background:rgba(0,212,255,0.08);
-    backdrop-filter:blur(10px);
+background:rgba(0,20,50,0.5);
+backdrop-filter:blur(12px);
 
-    border:1px solid rgba(0,212,255,0.3);
-    border-radius:15px;
+border:1px solid rgba(0,212,255,0.25);
+border-radius:18px;
 
-    box-shadow:0 0 20px rgba(0,212,255,0.2);
-    transition:0.3s;
+text-align:center;
+text-decoration:none;
+color:var(--text-main);
 
-    overflow:hidden;
+transition:0.3s;
 }
 
 .event-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 40px rgba(0,212,255,0.6);
+transform:translateY(-10px);
+box-shadow:0 0 35px rgba(0,212,255,0.5);
 }
 
-.event-card img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
+/* ===== EVENT PAGE ===== */
+.event-page{
+padding:80px 20px;
+text-align:center;
 }
 
-.event-card h2{
-    padding:15px;
+.event-page h1{
+color:var(--neon-soft);
+text-shadow:0 0 15px var(--neon-main);
 }
 
-/* ===== EVENT PAGE CONTENT ===== */
-.event-content{
-    padding:60px 20px;
-    text-align:center;
+/* QR */
+.qr-img{
+width:220px;
+margin-top:25px;
+border-radius:12px;
+box-shadow:0 0 20px rgba(0,212,255,0.4);
 }
 
-.event-content h2{
-    margin-bottom:30px;
+/* ===== FOOTER ===== */
+.main-footer{
+background:rgba(0,0,20,0.8);
+backdrop-filter:blur(12px);
+
+padding:70px 40px 20px;
+
+border-top:1px solid rgba(0,212,255,0.2);
 }
 
-/* ===== BUTTONS ===== */
-.btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 25px;
-    background:#00d4ff;
-    color:#020a1a;
-    border-radius:8px;
-    font-weight:bold;
-    transition:0.3s;
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
 }
 
-.btn:hover{
-    background:#7df9ff;
+.footer-grid h3{
+color:var(--neon-main);
 }
 
-/* Secondary Button */
-.secondary{
-    background:transparent;
-    border:1px solid #00d4ff;
-    color:#00d4ff;
-}
-
-.secondary:hover{
-    background:#00d4ff;
-    color:#020a1a;
-}
-
-/* ===== SUBTLE DISCO LIGHT OVERLAY ===== */
-body::before{
-    content:"";
-    position:fixed;
-    width:200%;
-    height:200%;
-    top:-50%;
-    left:-50%;
-
-    background:
-    radial-gradient(circle, rgba(0,212,255,0.05) 2%, transparent 3%);
-
-    background-size:80px 80px;
-    animation:moveLights 25s linear infinite;
-
-    pointer-events:none;
-}
-
-@keyframes moveLights{
-    from{ transform:rotate(0deg); }
-    to{ transform:rotate(360deg); }
+.footer-bottom{
+text-align:center;
+margin-top:40px;
+opacity:0.6;
+font-size:14px;
 }
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px){
 
-    .glow{
-        font-size:40px;
-    }
+.hero h1{
+font-size:40px;
+}
 
-    .tagline{
-        font-size:18px;
-    }
+.sparsh-title{
+font-size:22px;
+}
 
-    .events{
-        gap:20px;
-    }
+.events-grid{
+padding:40px 20px;
+}
 
-    .event-card{
-        width:90%;
-        max-width:320px;
-    }
-
-    .hero{
-        padding:40px 20px;
-    }
 }
