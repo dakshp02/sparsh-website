@@ -1,3 +1,4 @@
+/* ===== GLOBAL ===== */
 body{
     margin:0;
     font-family: Arial, sans-serif;
@@ -5,10 +6,13 @@ body{
     color:#e6f7ff;
 }
 
-/* HERO SECTION */
+a{
+    text-decoration:none;
+}
+
+/* ===== HERO SECTION ===== */
 .hero{
-    min-height:60vh;
-    padding:80px 20px 60px;
+    min-height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -23,6 +27,12 @@ body{
     background-position:center;
 }
 
+/* Smaller hero for event pages */
+.small-hero{
+    min-height:50vh;
+}
+
+/* ===== NEON TEXT ===== */
 .glow{
     font-size:70px;
     color:#7df9ff;
@@ -33,13 +43,12 @@ body{
 }
 
 .tagline{
-     font-size:24px;
+    font-size:24px;
     letter-spacing:3px;
     margin-top:10px;
-    margin-bottom:0px;
 }
 
-/* EVENTS SECTION */
+/* ===== EVENTS GRID ===== */
 .events{
     display:flex;
     justify-content:center;
@@ -48,7 +57,7 @@ body{
     flex-wrap:wrap;
 }
 
-/* EVENT CARD */
+/* ===== EVENT CARD ===== */
 .event-card{
     width:260px;
     text-align:center;
@@ -82,13 +91,88 @@ body{
     padding:15px;
 }
 
-/* BUTTON */
+/* ===== EVENT PAGE CONTENT ===== */
+.event-content{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.event-content h2{
+    margin-bottom:30px;
+}
+
+/* ===== BUTTONS ===== */
 .btn{
     display:inline-block;
     margin-top:20px;
     padding:12px 25px;
     background:#00d4ff;
     color:#020a1a;
-    text-decoration:none;
     border-radius:8px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#7df9ff;
+}
+
+/* Secondary Button */
+.secondary{
+    background:transparent;
+    border:1px solid #00d4ff;
+    color:#00d4ff;
+}
+
+.secondary:hover{
+    background:#00d4ff;
+    color:#020a1a;
+}
+
+/* ===== SUBTLE DISCO LIGHT OVERLAY ===== */
+body::before{
+    content:"";
+    position:fixed;
+    width:200%;
+    height:200%;
+    top:-50%;
+    left:-50%;
+
+    background:
+    radial-gradient(circle, rgba(0,212,255,0.05) 2%, transparent 3%);
+
+    background-size:80px 80px;
+    animation:moveLights 25s linear infinite;
+
+    pointer-events:none;
+}
+
+@keyframes moveLights{
+    from{ transform:rotate(0deg); }
+    to{ transform:rotate(360deg); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+
+    .glow{
+        font-size:40px;
+    }
+
+    .tagline{
+        font-size:18px;
+    }
+
+    .events{
+        gap:20px;
+    }
+
+    .event-card{
+        width:90%;
+        max-width:320px;
+    }
+
+    .hero{
+        padding:40px 20px;
+    }
 }
