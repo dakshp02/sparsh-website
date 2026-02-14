@@ -1,0 +1,6 @@
+# Ignore python QR generator
+qr_generator.py
+sparsh_logo.png
+output_qr/
+__pycache__/
+*.pyc
