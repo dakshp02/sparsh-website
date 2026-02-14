@@ -44,26 +44,6 @@ from{ transform:translateY(-100%); opacity:0; }
 to{ transform:translateY(0); opacity:1; }
 }
 
-/* HEADER GLOW LINE */
-.top-header::after{
-content:"";
-position:absolute;
-left:0;
-bottom:-1px;
-width:100%;
-height:1px;
-background:var(--neon-main);
-box-shadow:0 0 18px var(--neon-main);
-opacity:.7;
-animation:headerLineGlow 3s ease infinite alternate;
-}
-
-@keyframes headerLineGlow{
-0%{ opacity:.4; box-shadow:0 0 6px var(--neon-main); }
-100%{ opacity:1; box-shadow:0 0 22px var(--neon-main); }
-}
-
-/* HEADER ITEMS */
 .clg-logo{
 height:60px;
 animation:logoSlide 1.4s ease forwards;
@@ -149,6 +129,12 @@ color:var(--neon-soft);
 text-shadow:0 0 15px var(--neon-main),0 0 40px var(--neon-main);
 }
 
+.hero p{
+max-width:700px;
+opacity:0.9;
+line-height:1.6;
+}
+
 /* ================= EVENTS HERO ================= */
 .events-hero{
 min-height:28vh;
@@ -164,6 +150,26 @@ padding:40px 20px 30px 20px;
 font-size:48px;
 color:var(--neon-soft);
 text-shadow:0 0 12px var(--neon-main),0 0 30px var(--neon-main);
+}
+
+/* ================= BUTTON ================= */
+.main-btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 40px;
+background:transparent;
+border:2px solid var(--neon-main);
+color:var(--neon-main);
+text-decoration:none;
+font-weight:bold;
+border-radius:40px;
+transition:0.3s;
+}
+
+.main-btn:hover{
+background:var(--neon-main);
+color:#001020;
+box-shadow:0 0 25px var(--neon-main);
 }
 
 /* ================= EVENTS GRID ================= */
@@ -202,7 +208,9 @@ text-shadow:0 0 10px var(--neon-main);
 .event-card:hover{
 transform:translateY(-12px) scale(1.02);
 border:1px solid var(--neon-main);
-box-shadow:0 0 25px rgba(0,212,255,0.6), 0 0 50px rgba(0,212,255,0.3);
+box-shadow:
+0 0 25px rgba(0,212,255,0.6),
+0 0 50px rgba(0,212,255,0.3);
 }
 
 /* ================= EVENT PAGE ================= */
@@ -250,11 +258,12 @@ opacity:0.6;
 font-size:14px;
 }
 
-/* ================= SLIDE AUDITION PANEL SYSTEM ================= */
+/* ================= MOBILE AUDITION SYSTEM ================= */
+
 #auditionToggle{ display:none; }
 
 .audition-btn{
-display:none;
+display:none;   /* hidden by default (desktop) */
 position:fixed;
 left:15px;
 bottom:120px;
@@ -266,10 +275,11 @@ border-radius:30px;
 font-weight:600;
 cursor:pointer;
 box-shadow:0 0 18px rgba(0,212,255,0.4);
-z-index:2000;
+z-index:3000;
 }
 
 .audition-panel{
+display:none;   /* hidden by default (desktop) */
 position:fixed;
 left:-320px;
 top:0;
@@ -279,21 +289,12 @@ background:rgba(0,10,30,0.95);
 backdrop-filter:blur(15px);
 border-right:1px solid var(--neon-main);
 padding:80px 25px;
-transition:0.5s ease;
-z-index:2001;
+transition:0.45s ease;
+z-index:3001;
 }
 
 #auditionToggle:checked ~ .audition-panel{
 left:0;
-}
-
-.close-panel{
-position:absolute;
-top:20px;
-right:20px;
-font-size:22px;
-cursor:pointer;
-color:var(--neon-soft);
 }
 
 /* ================= MOBILE ================= */
@@ -326,8 +327,10 @@ bottom:80px;
 padding:12px 14px;
 }
 
-/* MOBILE BEHAVIOR */
+/* MOBILE SWITCH */
 .float-audition{ display:none; }
+
 .audition-btn{ display:block; }
+.audition-panel{ display:block; }
 
 }
