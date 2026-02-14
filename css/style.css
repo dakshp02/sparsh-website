@@ -1,156 +1,117 @@
-/* ===== ROOT COLORS ===== */
+/* ================= ROOT COLORS ================= */
 :root{
 --bg-main:#020a1a;
---bg-dark:#000814;
-
 --neon-main:#00d4ff;
 --neon-soft:#7df9ff;
-
 --text-main:#e6f7ff;
 }
 
-/* ===== GLOBAL ===== */
+/* ================= GLOBAL BODY ================= */
 body{
 margin:0;
 font-family:Segoe UI, Arial, sans-serif;
-background:var(--bg-main);
 color:var(--text-main);
 overflow-x:hidden;
-}
-
-/* ===== NEON PARTICLE BACKGROUND ===== */
-body::before{
-content:"";
-position:fixed;
-top:-50%;
-left:-50%;
-width:200%;
-height:200%;
 
 background:
-radial-gradient(circle, rgba(0,212,255,0.05) 2%, transparent 3%);
+linear-gradient(rgba(0,0,40,0.85), rgba(0,0,60,0.9)),
+url("../images/disco.jpg");
 
-background-size:80px 80px;
-animation:rotateLights 40s linear infinite;
-pointer-events:none;
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
 }
 
-@keyframes rotateLights{
-from{transform:rotate(0deg);}
-to{transform:rotate(360deg);}
-}
-
-/* ===== HEADER ===== */
+/* ================= HEADER ================= */
 .top-header{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 50px;
-
 background:rgba(0,0,20,0.7);
 backdrop-filter:blur(12px);
-
 border-bottom:1px solid rgba(0,212,255,0.2);
 }
 
-/* LOGO */
 .clg-logo{
 height:60px;
-animation:slideDown 1s ease;
 }
 
-/* SPARSH TEXT */
 .sparsh-title{
-font-size:30px;
+font-size:32px;
 font-weight:700;
 color:var(--neon-main);
-
-text-shadow:
-0 0 10px var(--neon-main),
-0 0 25px var(--neon-main);
-
-animation:slideDown 1.2s ease;
+text-shadow:0 0 10px var(--neon-main),0 0 25px var(--neon-main);
 }
 
-/* SLIDE DOWN */
-@keyframes slideDown{
-from{
-transform:translateY(-60px);
-opacity:0;
-}
-to{
-transform:translateY(0);
-opacity:1;
-}
+/* ================= FLOAT DATE ================= */
+.float-date{
+position:fixed;
+left:20px;
+bottom:140px;
+background:linear-gradient(45deg,#001f3f,#003566);
+border:1px solid var(--neon-main);
+padding:18px 22px;
+border-radius:16px;
+box-shadow:0 0 25px rgba(0,212,255,0.4);
+z-index:1000;
 }
 
-/* ===== HERO ===== */
+/* ================= HERO ================= */
 .hero{
-min-height:85vh;
+min-height:70vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:80px 20px;
-
-background:
-linear-gradient(rgba(0,0,30,0.7), rgba(0,0,40,0.9)),
-url("../images/hero.jpg");
-
-background-size:cover;
-background-position:center;
+padding:50px 20px;
 }
 
-/* HERO TITLE */
 .hero h1{
-font-size:64px;
-margin:0;
-
+font-size:60px;
 color:var(--neon-soft);
-
-text-shadow:
-0 0 15px var(--neon-main),
-0 0 40px var(--neon-main);
+text-shadow:0 0 15px var(--neon-main),0 0 40px var(--neon-main);
 }
 
-/* HERO TEXT */
 .hero p{
-max-width:650px;
+max-width:700px;
 opacity:0.9;
 line-height:1.6;
 }
 
-/* ===== DATE BADGE ===== */
-.event-date{
-position:absolute;
-right:40px;
-top:120px;
-
-background:linear-gradient(45deg,#001f3f,#003566);
-
-border:1px solid var(--neon-main);
-
-padding:16px 20px;
-border-radius:14px;
-
-box-shadow:0 0 20px rgba(0,212,255,0.4);
+/* ================= EVENTS HERO (CENTER EVENTS TEXT) ================= */
+.events-hero{
+min-height:28vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px 20px;
 }
 
-/* ===== BUTTON ===== */
+.events-hero h1{
+font-size:48px;
+color:var(--neon-soft);
+text-shadow:0 0 12px var(--neon-main),0 0 30px var(--neon-main);
+}
+
+.events-hero p{
+opacity:0.9;
+}
+
+/* ================= BUTTON ================= */
 .main-btn{
 display:inline-block;
 margin-top:25px;
 padding:14px 40px;
-
 background:transparent;
 border:2px solid var(--neon-main);
-
 color:var(--neon-main);
 text-decoration:none;
 font-weight:bold;
 border-radius:40px;
-
 transition:0.3s;
 }
 
@@ -160,7 +121,7 @@ color:#001020;
 box-shadow:0 0 25px var(--neon-main);
 }
 
-/* ===== EVENTS GRID ===== */
+/* ================= EVENTS GRID ================= */
 .events-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -168,60 +129,81 @@ gap:30px;
 padding:80px 40px;
 }
 
-/* EVENT CARD */
+/* ================= EVENT CARD SPARSH THEME ================= */
 .event-card{
-padding:50px 30px;
-
-background:rgba(0,20,50,0.5);
-backdrop-filter:blur(12px);
-
-border:1px solid rgba(0,212,255,0.25);
+background:rgba(0,15,40,0.65);
+backdrop-filter:blur(14px);
+border:1px solid rgba(0,212,255,0.35);
 border-radius:18px;
-
-text-align:center;
+overflow:hidden;
 text-decoration:none;
-color:var(--text-main);
+color:white;
+transition:0.35s;
+}
 
-transition:0.3s;
+.event-card::before{
+content:"";
+display:block;
+height:3px;
+background:linear-gradient(90deg, transparent, #00d4ff, transparent);
+}
+
+.event-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.event-card h3{
+padding:18px;
+font-size:20px;
+color:var(--neon-soft);
+text-shadow:0 0 10px var(--neon-main);
 }
 
 .event-card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 35px rgba(0,212,255,0.5);
+transform:translateY(-12px) scale(1.02);
+border:1px solid var(--neon-main);
+box-shadow:
+0 0 25px rgba(0,212,255,0.6),
+0 0 50px rgba(0,212,255,0.3);
 }
 
-/* ===== EVENT PAGE ===== */
+/* ================= EVENT PAGE CENTER ================= */
 .event-page{
-padding:80px 20px;
+min-height:80vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
+padding:40px 20px;
 }
 
-.event-page h1{
-color:var(--neon-soft);
-text-shadow:0 0 15px var(--neon-main);
+.event-page p{
+max-width:600px;
 }
 
-/* QR */
+/* ================= QR ================= */
 .qr-img{
+display:block;
+margin:25px auto;
 width:220px;
-margin-top:25px;
 border-radius:12px;
 box-shadow:0 0 20px rgba(0,212,255,0.4);
 }
 
-/* ===== FOOTER ===== */
+/* ================= FOOTER ================= */
 .main-footer{
-background:rgba(0,0,20,0.8);
+background:rgba(0,0,20,0.85);
 backdrop-filter:blur(12px);
-
 padding:70px 40px 20px;
-
 border-top:1px solid rgba(0,212,255,0.2);
 }
 
 .footer-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:40px;
 }
 
@@ -236,19 +218,42 @@ opacity:0.6;
 font-size:14px;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ================= MOBILE ================= */
 @media(max-width:768px){
 
-.hero h1{
-font-size:40px;
+.top-header{
+flex-direction:column;
+gap:10px;
+padding:15px 20px;
+text-align:center;
+}
+
+.clg-logo{
+height:50px;
 }
 
 .sparsh-title{
-font-size:22px;
+font-size:24px;
+}
+
+.hero h1{
+font-size:36px;
 }
 
 .events-grid{
+grid-template-columns:1fr;
 padding:40px 20px;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.float-date{
+left:10px;
+bottom:100px;
+padding:12px 14px;
 }
 
 }
