@@ -93,7 +93,7 @@ to{ opacity:1; transform:translateY(0);}
 .float-audition{
 position:fixed;
 left:25px;
-top:45%;
+top:60%;
 transform:translateY(-50%);
 background:rgba(0,15,40,0.75);
 backdrop-filter:blur(12px);
@@ -266,7 +266,7 @@ font-size:14px;
 display:none;   /* hidden by default (desktop) */
 position:fixed;
 left:15px;
-bottom:120px;
+bottom:140px;
 background:rgba(0,15,40,0.9);
 border:1px solid var(--neon-main);
 color:var(--neon-soft);
@@ -282,8 +282,8 @@ z-index:3000;
 display:none;   /* hidden by default (desktop) */
 position:fixed;
 left:-320px;
-top:0;
-width:280px;
+top:-25px;
+width:250px;
 height:100vh;
 background:rgba(0,10,30,0.95);
 backdrop-filter:blur(15px);
