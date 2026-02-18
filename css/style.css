@@ -266,7 +266,7 @@ font-size:14px;
 display:none;   /* hidden by default (desktop) */
 position:fixed;
 left:15px;
-bottom:140px;
+bottom:10px;
 background:rgba(0,15,40,0.9);
 border:1px solid var(--neon-main);
 color:var(--neon-soft);

@@ -1,161 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SPARSH 2026</title>
+    <title>SPARSH 2026</title>
 
-<link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<!-- FLOAT DATE LEFT -->
-<div class="float-date">
-<b>Event Dates:</b><br> <b>26 & 27</b> <b>Feb</b>
-</div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark p-3"
+        style="background-color: rgba(0,0,20,0.8); backdrop-filter: blur(10px);">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#" data-aos="fade-right">
+                <img src="images/logo.png" alt="Logo" style="height: 60px; width: auto; object-fit: contain;"
+                    class="d-inline-block align-text-top me-2">
+                <span class="fw-bold text-info" style="letter-spacing: 1px;">SPARSH 2026</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <span class="badge bg-danger p-2" data-aos="flip-up" data-aos-delay="500">26 & 27 Feb</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<!-- Floating Audition Dates -->
-<div class="float-audition">
-    <h4>Audition Schedule</h4>
-    
-    <p>🎭 <b>1st Auditions</b><br>
-    <b>17 February</b> <br> Dance & Singing
-    <br><b>(Dance Time Limit: 3 Minutes)</b><br>
-    <b>18 February</b></b> <br> Fashion Show & Drama</p>
+    <!-- Audition Offcanvas Trigger (Floating Button for Desktop) -->
+    <button
+        class="btn btn-primary rounded-pill position-fixed start-0 top-50 translate-middle-y ms-3 shadow-lg z-3 d-none d-md-block"
+        type="button" data-bs-toggle="offcanvas" data-bs-target="#auditionOffcanvas" aria-controls="auditionOffcanvas"
+        style="writing-mode: vertical-rl; padding: 15px 8px; border: 1px solid var(--neon-main); box-shadow: 0 0 15px var(--neon-main);">
+        📅 Auditions
+    </button>
 
-    <p>🏆 <b>Final Auditions</b><br>
-    <b>20 February</b> <br> Dress Rehearsal (Dance & Singing)
-    <br><b>21 February</b> <br> Dress Rehearsal (Fashion Show & Drama)</p>
+    <!-- Mobile Floating Button -->
+    <button class="btn btn-primary rounded-circle position-fixed bottom-0 start-0 m-3 shadow-lg z-3 d-md-none p-3"
+        type="button" data-bs-toggle="offcanvas" data-bs-target="#auditionOffcanvas" aria-controls="auditionOffcanvas">
+        📅
+    </button>
 
-    <p><b>Faculty Coordinators:</b>
-        <br>Dr. Pallavi Hatakar 
-        <br>Contact Details: 9762473316
-        <br>Dr. Asawaree Yadav
-        <br>Contact Details: 8237577711</p>
-</div>
-
-<!-- Hidden Toggle -->
-<input type="checkbox" id="auditionToggle">
-
-<!-- Floating Button -->
-<label for="auditionToggle" class="audition-btn">
-📅 Auditions
-</label>
-
-<!-- Slide Panel -->
-<div class="audition-panel">
-
-    <label for="auditionToggle" class="close-panel">✕</label>
-
-    <h4>Audition Schedule</h4>
-    
-    <p>🎭 <b>1st Auditions</b><br>
-    <b>17 February:</b>  Dance & Singing
-    <br><b>(Dance Time Limit: 3 Minutes)</b><br>
-    <b>18 February:</b></b>  Fashion Show & Drama</p>
-
-    <p>🏆 <b>Final Auditions</b><br>
-    <b>20 February:</b> Dress Rehearsal <br>(Dance & Singing)
-    <br><b>21 February</b> <br> Dress Rehearsal (Fashion Show & Drama)</p>
-
-    <p><b>Faculty Coordinators:</b>
-        <br>Dr. Pallavi Hatakar 
-        <br>Contact Details: 9762473316
-        <br>Dr. Asawaree Yadav
-        <br>Contact Details: 8237577711</p>
-</div>
-
-</div>
-
-
-<!-- HEADER -->
-<header class="top-header main-header slide-down">
-
-
-    <img src="images/logo.png" class="clg-logo">
-
-    <div class="sparsh-title">
-        SPARSH 2026
+    <!-- Offcanvas for Auditions -->
+    <div class="offcanvas offcanvas-start text-bg-dark border-end border-info" tabindex="-1" id="auditionOffcanvas"
+        aria-labelledby="auditionOffcanvasLabel" style="background: rgba(2, 10, 26, 0.95);">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-info" id="auditionOffcanvasLabel">Audition Schedule</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="mb-4">
+                <h6 class="text-warning">🎭 1st Auditions</h6>
+                <p>
+                    <strong>17 February:</strong> Dance & Singing<br>
+                    <small class="text-muted">(Dance Time Limit: 3 Minutes)</small>
+                </p>
+                <p><strong>18 February:</strong> Fashion Show & Drama</p>
+            </div>
+            <div class="mb-4">
+                <h6 class="text-warning">🏆 Final Auditions</h6>
+                <p><strong>20 February:</strong> Dress Rehearsal <br>(Dance & Singing)</p>
+                <p><strong>21 February:</strong> Dress Rehearsal <br>(Fashion Show & Drama)</p>
+            </div>
+            <hr class="border-secondary">
+            <div>
+                <h6 class="text-info">Faculty Coordinators</h6>
+                <ul class="list-unstyled">
+                    <li>Dr. Pallavi Hatakar <br><small>9762473316</small></li>
+                    <li class="mt-2">Dr. Asawaree Yadav <br><small>8237577711</small></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
-</header>
-
-<!-- HERO + ABOUT -->
-<section class="hero">
-
-    <h1>
-        Celebrate Expression<br>
-        Feel The Rhythm
-    </h1>
-
-    <p>
-        Sparsh is the grand cultural celebration of our college, 
-        bringing together talent, creativity, and passion on one vibrant stage. 
-        From electrifying dance and soulful music to drama, fun events, and 
-        unforgettable moments, it’s a festival where every student shines. 
-        More than just an event, Sparsh is a celebration of unity, expression, 
-        and memories that last a lifetime. ✨
-    </p>
-
-    <a href="events.html" class="main-btn">
-        Explore Events
-    </a>
-
-</section>
-
-<!-- ABOUT EXTRA SECTION -->
-<section class="about-section">
-
-    <h2>About SPARSH</h2>
-
-    <p>
-        SPARSH is designed to provide a platform for students to
-        showcase their performance skills, artistic expression and
-        stage confidence. With events ranging from dance, singing,
-        fashion and personality competitions — SPARSH celebrates
-        every form of talent.
-    </p>
-
-</section>
-
-<!-- FOOTER -->
-<footer class="main-footer">
-
-    <div class="footer-grid">
-
-        <div>
-            <h3>SPARSH</h3>
-            <p>
-                Sparsh – where the campus comes alive 
-                A stage filled with rhythm, drama, and dreams 
-                One night. One vibe. Endless memories 
-                The celebration we wait for all year ✨
+    <!-- Hero Section -->
+    <section class="hero d-flex align-items-center justify-content-center min-vh-100 text-center position-relative">
+        <div class="container" style="z-index: 2;">
+            <h1 class="display-2 fw-bold mb-3" data-aos="fade-up" data-aos-duration="1000">
+                <span class="d-block text-white">Celebrate Expression</span>
+                <span class="d-block text-info">Feel The Rhythm</span>
+            </h1>
+            <p class="lead text-light opacity-75 mx-auto mb-5" style="max-width: 700px;" data-aos="fade-up"
+                data-aos-delay="200">
+                Sparsh is the grand cultural celebration of our college,
+                bringing together talent, creativity, and passion on one vibrant stage.
+                One night. One vibe. Endless memories.
             </p>
-
-            <h4>Faculty Coordinators</h4>
-            <p>Mr. Pushkaraj Pawar</p>
-            <p>Mr. Abhijit Matkar</p>
+            <a href="events.html" class="btn btn-outline-info btn-lg rounded-pill px-5 py-3 fw-bold" data-aos="zoom-in"
+                data-aos-delay="400">
+                Explore Events
+            </a>
         </div>
+    </section>
 
-        <div>
-            <h3>Contact Us</h3>
-            <p>D. Y. Patil School of Engineering & Management</p>
-            <p>Kolhapur</p>
-
-            <h4>Student Coordinators</h4>
-            <p>Mr. Harsh Patil</p>
-            <p>Ms. Dhruva Nikam</p>
+    <!-- About Section -->
+    <section id="about" class="py-5" style="background: rgba(0,0,0,0.3);">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <h2 class="text-info mb-4">About SPARSH</h2>
+                    <p class="fs-5 text-light opacity-90">
+                        SPARSH is designed to provide a platform for students to
+                        showcase their performance skills, artistic expression and
+                        stage confidence. With events ranging from dance, singing,
+                        fashion and personality competitions — SPARSH celebrates
+                        every form of talent.
+                    </p>
+                </div>
+            </div>
         </div>
+    </section>
 
-    </div>
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5 border-top border-secondary position-relative">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-6" data-aos="fade-right">
+                    <h3 class="text-info mb-3">SPARSH</h3>
+                    <p class="opacity-75">
+                        Sparsh – where the campus comes alive<br>
+                        A stage filled with rhythm, drama, and dreams<br>
+                        The celebration we wait for all year ✨
+                    </p>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <h5 class="text-white mb-3">Faculty Coordinators</h5>
+                    <ul class="list-unstyled opacity-75">
+                        <li>Mr. Pushkaraj Pawar</li>
+                        <li>Mr. Abhijit Matkar</li>
+                    </ul>
+                </div>
+                <div class="col-md-3" data-aos="fade-left" data-aos-delay="200">
+                    <h5 class="text-white mb-3">Contact Us</h5>
+                    <p class="opacity-75">
+                        D. Y. Patil School of Engineering & Management<br>
+                        Kolhapur
+                    </p>
+                    <h6 class="text-white mt-4 mb-2">Student Coordinators</h6>
+                    <ul class="list-unstyled opacity-75">
+                        <li>Mr. Harsh Patil</li>
+                        <li>Ms. Dhruva Nikam</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-5 pt-4 border-top border-secondary opacity-50">
+                <small>&copy; 2026 SPARSH | DYPSEM</small>
+            </div>
+        </div>
+    </footer>
 
-    <div class="footer-bottom">
-        © 2026 SPARSH | DYPSEM
-    </div>
-
-</footer>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+        });
+    </script>
 
 </body>
+
 </html>

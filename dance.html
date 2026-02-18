@@ -2,109 +2,100 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Dance Event | SPARSH 2026</title>
-
-<link rel="stylesheet" href="css/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dance Event | SPARSH 2026</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<!-- FLOAT DATE -->
-<div class="float-date">
-<b>Event Dates:</b><br> <b>26 & 27</b> <b>Feb</b>
-</div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark p-3"
+        style="background-color: rgba(0,0,20,0.8); backdrop-filter: blur(10px);">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo.png" alt="Logo" style="height: 60px; width: auto; object-fit: contain;"
+                    class="d-inline-block align-text-top me-2">
+                <span class="fw-bold text-info" style="letter-spacing: 1px;">SPARSH 2026</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<!-- HEADER -->
-<header class="top-header">
+    <!-- Content -->
+    <section class="container py-5 mt-5">
+        <div class="row align-items-center mt-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <h1 class="display-3 fw-bold text-info mb-4">Dance Event</h1>
+                <p class="lead text-light opacity-90">
+                    Dance at Sparsh is where energy meets expression and passion takes center stage.
+                    From powerful group performances to graceful solos, every act brings rhythm,
+                    emotion, and electrifying vibes to the audience. It’s not just about steps —
+                    it’s about telling a story through your moves and owning the spotlight. 💃✨
+                </p>
 
-<img src="images/logo.png" class="clg-logo">
+                <div class="card bg-dark border-info mt-4 p-4" style="--bs-bg-opacity: .5;">
+                    <h4 class="text-warning">Event Details</h4>
+                    <ul class="list-unstyled mt-3 text-light">
+                        <li class="mb-2"><strong>📍 Venue:</strong> DYPSEM</li>
+                        <li class="mb-2"><strong>👥 Participation:</strong> Solo, Duo or Group</li>
+                        <li class="mb-2"><strong>⏳ Duration:</strong> 3 Minutes Max</li>
+                    </ul>
+                    <a href="https://forms.gle/8pcM6UkBjS2ioA9J7" target="_blank"
+                        class="btn btn-outline-info btn-lg mt-3 rounded-pill fw-bold">Register Now</a>
+                </div>
+            </div>
 
-<div class="sparsh-title">
-SPARSH 2026
-</div>
-
-</header>
-
-<!-- EVENT CONTENT -->
-<section class="event-page">
-
-<h1>Dance Event</h1>
-
-<p>
-Dance at Sparsh is where energy meets expression and passion takes center stage.
- From powerful group performances to graceful solos, every act brings rhythm, 
- emotion, and electrifying vibes to the audience. It’s not just about steps — 
- it’s about telling a story through your moves and owning the spotlight. 💃✨
-</p>
-
-<h3>Event Details</h3>
-
-<p><b>Venue:</b> DYPSEM</p>
-
-<p><b>Participation:</b> Solo, Duo or Group</p>
-
-<p><b>Music Duration:</b> 3 Minutes</p>
-
-<!-- QR -->
-<img src="images/forms_dance.png" class="qr-img">
-
-<!-- REGISTER BUTTON -->
-<a href="https://forms.gle/8pcM6UkBjS2ioA9J7" class="main-btn">
-Register Now
-</a>
-
-<br><br>
-
-<h3>Event Coordinator</h3>
-<p> Mr. Harsh Patil – 7744059434
-<br> Ms. Dhruva Nikam – 9309454344</p>
-
-<h3>Faculty Coordinator</h3>
-<p>Dr. Asawaree Yadav
-<br>Mrs. Pallavi Hatakr Danve</p>
-
-</section>
-
-<!-- FOOTER -->
-<footer class="main-footer">
-
-    <div class="footer-grid">
-
-        <div>
-            <h3>SPARSH</h3>
-            <p>
-                Sparsh – where the campus comes alive 
-                A stage filled with rhythm, drama, and dreams 
-                One night. One vibe. Endless memories 
-                The celebration we wait for all year ✨
-            </p>
-
-            <h4>Faculty Coordinators</h4>
-            <p>Mr. Pushkaraj Pawar</p>
-            <p>Mr. Abhijit Matkar</p>
+            <div class="col-lg-6 text-center mt-5 mt-lg-0" data-aos="zoom-in">
+                <div class="p-3 bg-white rounded-3 d-inline-block">
+                    <img src="images/forms_dance.png" class="img-fluid rounded" alt="Scan to Register"
+                        style="max-width: 250px;">
+                </div>
+                <p class="mt-2 text-muted small">Scan to Register</p>
+            </div>
         </div>
 
-        <div>
-            <h3>Contact Us</h3>
-            <p>D. Y. Patil School of Engineering & Management</p>
-            <p>Kolhapur</p>
-
-            <h4>Student Coordinators</h4>
-            <p>Mr. Harsh Patil</p>
-            <p>Ms. Dhruva Nikam</p>
+        <!-- Coordinators -->
+        <div class="row mt-5 pt-5 border-top border-secondary" data-aos="fade-up">
+            <div class="col-md-6 text-center mb-4">
+                <h4 class="text-info">Student Coordinators</h4>
+                <p class="text-light opacity-75">
+                    Mr. Harsh Patil – 7744059434<br>
+                    Ms. Dhruva Nikam – 9309454344
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <h4 class="text-info">Faculty Coordinators</h4>
+                <p class="text-light opacity-75">
+                    Dr. Asawaree Yadav<br>
+                    Mrs. Pallavi Hatakr Danve
+                </p>
+            </div>
         </div>
+    </section>
 
-    </div>
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 border-top border-secondary text-center mt-auto">
+        <small class="opacity-50">&copy; 2026 SPARSH | DYPSEM</small>
+    </footer>
 
-    <div class="footer-bottom">
-        © 2026 SPARSH | DYPSEM
-    </div>
-
-</footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
 </body>
+
 </html>
